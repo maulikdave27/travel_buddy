@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        
+        .result {
+            color: blue; /* Change color as desired */
+            font-weight: bold; /* Optionally, apply other styles like font-weight */
+        }
+    </style>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <form id="currencyForm" method="post">
+        <div class="input-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+        </div>
+        <div class="input-group">
+            <label for="from_currency">Current:</label>
+            <select id="from_currency" name="from_currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="to_currency">Target:</label>
+            <select id="to_currency" name="to_currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+            </select>
+        </div>
+        <button type="submit">Convert</button>
+    </form>
+    <div id="result"></div>
+ 
+    <h2>Converted Amount:</h2>
+    <p>{% autoescape false %}
+        {{ result }}
+        {% endautoescape %}</p>
+  
+    </div>
+</body>
+</html>
